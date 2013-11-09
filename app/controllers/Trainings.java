@@ -17,8 +17,8 @@ public class Trainings extends Controller {
         render(categories);
     }
 
-    @Get("/trainings/{trainingId}")
-    public static void read(Long trainingId) {
+    @Get("/trainings/{trainingId}/{title}")
+    public static void read(Long trainingId, String title) {
         Training training = Training.findById(trainingId);
         render(training);
     }

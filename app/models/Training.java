@@ -26,24 +26,19 @@ public class Training extends Model {
 
     public Long priceFreelance;
 
-    @Lob
     @MaxSize(10000)
     public String audience;
 
-    @Lob
     @MaxSize(10000)
     public String goals;
 
-    @Lob
     @MaxSize(10000)
     public String methodology;
 
-    @Lob
     @MaxSize(10000)
     public String prerequisites;
 
     @Required
-    @Lob
     @MaxSize(10000)
     public String agenda;
 

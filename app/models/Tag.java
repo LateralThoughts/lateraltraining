@@ -8,4 +8,9 @@ import javax.persistence.Entity;
 public class Tag extends Model {
 
     public String title;
+
+    @Override
+    public String toString() {
+        return title;
+    }
 }

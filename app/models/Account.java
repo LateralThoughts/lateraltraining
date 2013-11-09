@@ -26,7 +26,6 @@ public class Account extends Model {
     public String name;
 
     @Required
-    @Lob
     @MaxSize(1000)
     public String description;
 

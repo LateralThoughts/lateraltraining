@@ -25,7 +25,7 @@
                             <p>
                                 #{list items:category.trainings, as:'training'}
                                     #{if training.length > 1 }
-                                        <a href="@{Trainings.read(training.id)}" class="btn btn-warning">${training.title}</a>
+                                        <a href="@{Trainings.read(training.id, training.title.slugify())}" class="btn btn-warning">${training.title}</a>
                                     #{/if}
                                 #{/list}
                             </p>
@@ -33,7 +33,7 @@
                             <p>
                                 #{list items:category.trainings, as:'training'}
                                     #{if training.length <= 1 }
-                                        <a href="@{Trainings.read(training.id)}" class="btn btn-warning">${training.title}</a>
+                                        <a href="@{Trainings.read(training.id, training.title.slugify())}" class="btn btn-warning">${training.title}</a>
                                     #{/if}
                                 #{/list}
                             </p>
