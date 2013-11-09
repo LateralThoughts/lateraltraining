@@ -1,0 +1,80 @@
+#{extends 'main.html'/}
+
+
+<div id="content">
+
+    <div class="container ">
+
+        <div class="row-fluid">
+            <div class="span8">
+                <h2>Les formations</h2>
+
+
+                #{list items:categories, as:'category'}
+                    <div class="row-fluid well">
+                        <div class="span3">
+                            <img src="@{Categories.showImage(category.id)}" width="100" height="100" class="img-polaroid"/>
+                            <br/>
+                        </div>
+                        <div class="span9">
+                            <h3>${category.title}</h3>
+                            <p>
+                            ${category.description}
+                            </p>
+                            <b>Formation longues</b>
+                            <p>
+                                #{list items:category.trainings, as:'training'}
+                                    #{if training.length > 1 }
+                                        <a href="@{Trainings.read(training.id)}" class="btn btn-warning">${training.title}</a>
+                                    #{/if}
+                                #{/list}
+                            </p>
+                            <b>Sur un jour ou une demi journée</b>
+                            <p>
+                                #{list items:category.trainings, as:'training'}
+                                    #{if training.length <= 1 }
+                                        <a href="@{Trainings.read(training.id)}" class="btn btn-warning">${training.title}</a>
+                                    #{/if}
+                                #{/list}
+                            </p>
+
+                        </div>
+                    </div>
+                #{/list}
+
+            </div>
+            <div class="span3 offset1">
+                <h3>Un besoin particulier ?</h3>
+                <p>
+                    N'oubliez pas que nous pouvons aussi vous créer des programmes sur mesures. N'hésitez pas à consulter <a href="/formateurs" >liste de nos formateurs</a> pour avoir un aperçu sur ce que nous pouvons proposer.
+                </p>
+
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="http://lateral-thoughts.us7.list-manage1.com/subscribe/post?u=ee440933983f60fdf99c48ee0&amp;id=e65f3c2ee0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <h4>Restons en contact</h4>
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-envelope"></i></span>
+                            <input id="EMAIL" name="EMAIL" class="email" placeholder="Rentrez votre adresse mail" type="email" required>
+                        </div>
+                        <input type="submit" value="S'abonner à notre newsletter" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                    </form>
+                </div>
+
+                <!--End mc_embed_signup-->
+
+                <h3>Des Hands-on ?</h3>
+                <p>
+                    Un hands-on est un atelier pratique sur un demi journée proposé à des auditoires variant de 10 à 20 personnes. Ces ateliers sont précédés d'une introduction générale sur le sujet et le ou les intervenants sont à votre disposition pour vous débloquer, répondre à vos questions.
+                    Ils nous arrivent de proposer ces formats gratuitement en fonction de nos envies, suivez-nous sur <a href="http://twitter.com/lateraithoughts">Twitter</a> pour en savoir plus.
+                </p>
+                <p>
+                    Cependant nous pouvons aussi proposer ces formats sur une journée complète <u>au sein de votre entreprise</u>. C'est un format très adapté pour mettre le pied à l'étrier sur un nouveau sujet.
+                </p>
+
+
+            </div>
+        </div>
+    </div> <!-- /.container -->
+
+</div> <!-- /#content -->
