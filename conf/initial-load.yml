@@ -1,0 +1,43 @@
+---
+detect_relations: true
+
+Category(java):
+ title : Java
+ description : Venez découvrir l'écosystème Java à travers les formations suivantes
+
+Category(quality):
+ title : Qualité
+ description : Augmentez l'efficacité de vos équipes en adoptant les bons réflexes
+
+User(hlassiege):
+ email : hlassiege@gmail.com
+ name : Hugo Lassiège
+ password : X03MO1qnZdYdgyfeuILPmQ==
+ isAdmin : true
+
+Training(javaBeginner):
+ title : Java Débutant
+ length : 3
+ price : 1500
+ priceFreelance : 800
+ audience : débutant
+ users : hlassiege
+ categories : java
+
+Training(javaIntermediate):
+ title : Java intermédiaire
+ length : 3
+ price : 1500
+ priceFreelance : 800
+ audience : débutant
+ users : hlassiege
+ categories : java
+
+Training(usineLogicielle):
+ title : Usine logicielle
+ length : 3
+ price : 1500
+ priceFreelance : 800
+ audience : débutant
+ users : hlassiege
+ categories : [java, quality]
