@@ -1,6 +1,18 @@
 ---
 detect_relations: true
 
+Tag(java):
+ title : java
+
+Tag(qualite):
+ title : qualite
+
+Tag(python):
+ title : python
+
+Tag(cqrs):
+ title : cqrs
+
 Category(java):
  title : java
  description : Venez découvrir l'écosystème Java à travers les formations suivantes
@@ -12,6 +24,12 @@ Category(quality):
 Account(hlassiege):
  email : hlassiege@gmail.com
  name : Hugo Lassiège
+ password : X03MO1qnZdYdgyfeuILPmQ==
+ isAdmin : true
+
+Account(ogirardot):
+ email : ogirardot@gmail.com
+ name : Olivier Girardot
  password : X03MO1qnZdYdgyfeuILPmQ==
  isAdmin : true
 

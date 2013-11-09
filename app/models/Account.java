@@ -7,9 +7,7 @@ import play.data.validation.Required;
 import play.db.jpa.Model;
 import play.db.jpa.Blob;
 
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class Account extends Model {
 
     public boolean isAdmin;
 
-    @OneToMany
+    @ManyToMany
     public List<Tag> tags = new ArrayList<>();
 
     @Required
