@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User extends Model {
+public class Account extends Model {
 
     @Required
     @Email

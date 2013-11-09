@@ -9,7 +9,7 @@ Category(quality):
  title : Qualité
  description : Augmentez l'efficacité de vos équipes en adoptant les bons réflexes
 
-User(hlassiege):
+Account(hlassiege):
  email : hlassiege@gmail.com
  name : Hugo Lassiège
  password : X03MO1qnZdYdgyfeuILPmQ==
@@ -21,7 +21,7 @@ Training(javaBeginner):
  price : 1500
  priceFreelance : 800
  audience : débutant
- users : hlassiege
+ accounts : hlassiege
  categories : java
 
 Training(javaIntermediate):
@@ -30,7 +30,7 @@ Training(javaIntermediate):
  price : 1500
  priceFreelance : 800
  audience : débutant
- users : hlassiege
+ accounts : hlassiege
  categories : java
 
 Training(usineLogicielle):
@@ -39,5 +39,5 @@ Training(usineLogicielle):
  price : 1500
  priceFreelance : 800
  audience : débutant
- users : hlassiege
+ accounts : hlassiege
  categories : [java, quality]

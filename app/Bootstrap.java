@@ -1,10 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-
+import models.Account;
 import models.Training;
-import models.User;
 import play.Play;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
@@ -19,13 +14,13 @@ public class Bootstrap extends Job
      */
     public void doJob()
     {
-        if (Play.mode == Play.Mode.DEV && User.count() == 0)
+        if (Play.mode == Play.Mode.DEV && Account.count() == 0)
         {
             Fixtures.deleteAllModels();
             Fixtures.loadModels("test-datas.yml");
         }
         
-        if (Play.mode == Play.Mode.PROD && Training.count() == 0 && User.count() == 0)
+        if (Play.mode == Play.Mode.PROD && Training.count() == 0 && Account.count() == 0)
         {
             Fixtures.loadModels("initial-load.yml");
         }

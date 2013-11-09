@@ -17,12 +17,12 @@
 <div class="span12">
 <h2>Les formateurs</h2>
 
-    #{list items:users,as:'trainer'}
+    #{list items:accounts,as:'trainer'}
 
 
 <div class="row-fluid well">
     <div class="span3">
-        <img src="@{Users.showImage(trainer.id)}"  class="img-circle"/>
+        <img src="@{Accounts.showImage(trainer.id)}"  class="img-circle"/>
         <br/>
         #{list items:trainer.tags,as:'tag' }
             <span class="label">${tag}</span>

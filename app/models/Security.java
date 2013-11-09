@@ -1,25 +1,24 @@
 package models;
 
 import controllers.Secure;
-import models.User;
 import play.libs.Crypto;
 
 public class Security extends Secure.Security {
 
     static boolean authenticate(String username, String password) {
-        User user = User.find("byEmail", username).first();
-        return accountValid(user) && passwordMatch(username, password, user);
+        Account account = Account.find("byEmail", username).first();
+        return accountValid(account) && passwordMatch(username, password, account);
     }
 
-    private static boolean isAdmin(User account) {
+    private static boolean isAdmin(Account account) {
         return account.isAdmin;
     }
 
-    private static boolean passwordMatch(String username, String password, User account) {
+    private static boolean passwordMatch(String username, String password, Account account) {
         return Crypto.passwordHash(password).equals(account.password);
     }
 
-    private static boolean accountValid(User account) {
+    private static boolean accountValid(Account account) {
         return account != null;
     }
 }

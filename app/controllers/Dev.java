@@ -1,6 +1,5 @@
 package controllers;
 
-import models.User;
 import play.Play;
 import play.modules.router.Get;
 import play.mvc.Controller;

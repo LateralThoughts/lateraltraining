@@ -9,10 +9,7 @@ import play.db.jpa.Model;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -53,7 +50,7 @@ public class Training extends Model {
     public Blob image;
 
     @ManyToMany
-    public Set<User> users = new HashSet<>();
+    public Set<Account> accounts = new HashSet<>();
 
     @ManyToMany
     public Set<Category> categories = new HashSet<>();

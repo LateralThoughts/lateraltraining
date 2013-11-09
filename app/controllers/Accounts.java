@@ -1,25 +1,23 @@
 package controllers;
 
-import models.Category;
-import models.Training;
-import models.User;
+import models.Account;
 import play.modules.router.Get;
 import play.mvc.Controller;
 
 import java.util.List;
 
-public class Users extends Controller {
+public class Accounts extends Controller {
 
     @Get("/trainers")
     public static void list() {
-        List<User> users = User.findAll();
-        render(users);
+        List<Account> accounts = Account.findAll();
+        render(accounts);
     }
 
     @Get("/trainers/{trainerId}/image")
     public static void showImage(long trainerId) {
-        User user = User.findById(trainerId);
-        renderBinary(user.image.getFile());
+        Account account = Account.findById(trainerId);
+        renderBinary(account.image.getFile());
     }
 
 }
