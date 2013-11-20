@@ -1,6 +1,7 @@
 package models;
 
 import database.Blob;
+import org.hibernate.annotations.Type;
 import play.data.validation.Email;
 import play.data.validation.MaxSize;
 import play.data.validation.Password;
@@ -18,6 +19,8 @@ public class Account extends Model {
     @Email
     public String email;
 
+    @Lob
+    @Type(type="database.Blob")
     public Blob image;
 
     @Required

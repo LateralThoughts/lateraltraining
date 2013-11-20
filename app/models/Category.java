@@ -1,6 +1,7 @@
 package models;
 
-import play.db.jpa.Blob;
+import database.Blob;
+import org.hibernate.annotations.Type;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -23,8 +24,10 @@ public class Category extends Model {
     @ManyToMany(mappedBy = "categories")
     public Set<Training> trainings = new HashSet<>();
 
-    //@Lob
+    @Lob
+    @Type(type="database.Blob")
     public Blob image;
+
 
     @Override
     public String toString() {

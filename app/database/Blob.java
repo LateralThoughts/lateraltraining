@@ -1,25 +1,21 @@
 package database;
 
-import java.io.*;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.ArrayUtils;
+import org.hibernate.HibernateException;
+import org.hibernate.type.WrapperBinaryType;
+import org.hibernate.usertype.UserType;
+import play.db.Model.BinaryField;
+import play.exceptions.UnexpectedException;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.util.UUID;
-
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.ArrayUtils;
-import org.hibernate.HibernateException;
-import org.hibernate.engine.SessionImplementor;
-import org.hibernate.type.StringType;
-import org.hibernate.type.WrappedMaterializedBlobType;
-import org.hibernate.usertype.UserType;
-
-import play.Play;
-import play.db.Model.BinaryField;
-import play.exceptions.UnexpectedException;
-import play.libs.Codec;
-import play.libs.IO;
 
 /**
  * Custom type pour stocker les images en base
@@ -83,7 +79,7 @@ public class Blob implements BinaryField, UserType {
 
     @Override
     public int[] sqlTypes() {
-        return new int[] {Types.BLOB};
+        return new int[] {Types.VARBINARY};
     }
 
     @Override
@@ -108,7 +104,7 @@ public class Blob implements BinaryField, UserType {
 
     @Override
     public Object nullSafeGet(ResultSet resultSet, String[] names, Object o) throws HibernateException, SQLException {
-        Byte[] data = (Byte[]) WrappedMaterializedBlobType.INSTANCE.get(resultSet, names[0]);
+        Byte[] data = (Byte[]) WrapperBinaryType.INSTANCE.get(resultSet, names[0]);
         if(data == null || data.length == 0) {
             return new Blob();
         }

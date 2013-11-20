@@ -7,6 +7,7 @@ import play.db.jpa.JPABase;
 import play.modules.router.Get;
 import play.mvc.Controller;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 
 public class Trainings extends Controller {
@@ -26,7 +27,7 @@ public class Trainings extends Controller {
     @Get("/trainings/{trainingId}/image")
     public static void showImage(long trainingId) {
         Training training = Training.findById(trainingId);
-        renderBinary(training.image.getFile());
+        renderBinary(new ByteArrayInputStream(training.image.getData()));
     }
 
 }
