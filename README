@@ -1,0 +1,11 @@
+Application pour les formations proposées chez LT
+
+Faite avec play Framework. Il faut le télécharger pour pouvoir développer :
+http://www.playframework.com/
+
+**Bien prendre la version 1, la seule qui vaille le coup pour du Java ;)**
+
+Pour lancer :
+play run
+
+Attention a ne mettre aucun mot de passe dans le fichier application.conf. Tout passe par variable d'environnement sous Heroku.
