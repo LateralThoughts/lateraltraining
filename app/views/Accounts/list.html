@@ -22,7 +22,7 @@
 
 <div class="row-fluid well">
     <div class="span3">
-        <img src="@{Accounts.showImage(trainer.id)}"  class="img-circle"/>
+        <img src="@{Accounts.showImage(trainer.id)}"  class="img-circle" width="100" height="100"/>
         <br/>
         #{list items:trainer.tags,as:'tag' }
             <span class="label">${tag}</span>
