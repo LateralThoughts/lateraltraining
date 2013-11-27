@@ -2,6 +2,7 @@ package models;
 
 import database.Blob;
 import org.hibernate.annotations.Type;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -26,6 +27,7 @@ public class Category extends Model {
 
     @Lob
     @Type(type="database.Blob")
+    @Required
     public Blob image;
 
 

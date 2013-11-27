@@ -45,6 +45,7 @@ public class Training extends Model {
 
     @Lob
     @Type(type="database.Blob")
+    @Required
     public Blob image;
 
 
